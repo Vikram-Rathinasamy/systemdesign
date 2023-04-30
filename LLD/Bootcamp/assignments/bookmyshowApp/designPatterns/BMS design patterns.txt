@@ -1,0 +1,31 @@
+BookMyShow design patterns and Solid principles: 
+1. Factory Design patterns: 
+             This comes unders creational design patterns where objects with Similar functionalities can be abstracted by factory.
+			 Eg : MovieLanguage
+			 1. An interface called ILanguage with function displayMovieNames()
+			 2. Classes such as TamilMovies,EnglishMovies,HindiMovies of type Language will be implementing the interface and has DisplayMovies() function
+				displaying the list of movies each class has.
+			 3. A Factory class to create and return the objects of above 3 Movie classes of type Language
+			 4. A client class that creates the object of the factory class and calling the displayMovieNames function by passing the language as a param.
+2.Observer design pattern:
+            This is a behavioural design pattern where a change is notified to all the subscribers of the object.
+			Subject-->Where the change occurs
+			Observer->Listens the changes
+			Eg To notify the users on Booking Confirmation .
+			1.Subject class will have a function to register,unregister and notify the observers, where as in notify function , it sends out a common message
+			called "Your booking has confirmed with Id <TickedId>" to a list of Iobservers.
+			2. Iobserver is an interface which has a function called sendMessage () and returns the Iobserver object
+			3. smsObserver,whatsappObserver,mailObservers will implement Iobserver and sends out the messages
+3. SingleTon design pattern: 
+            This is a creational design pattern, where an object of a class is created only once and shared across to improve performance, collision avoiding etc.,
+			Eg : Db connection 
+			Once the Db connection is established, the same object is shared across all the classes , say for Booking a tickets,getting userDetails, getting Show details etc.,
+4. Strategy design pattern:
+			This is a behavioural design pattern, where the strategy is decided on the runtime execution in a class implementation . 
+			Eg : Pricing strategy 
+			If the day is weekend/holiday/movie releasedate /Theatre is almost full:
+				DynammicPricingStrategy()
+				   >Algorithm to calculate the prices depends on many factors here 
+			else:
+				standardPricingStrategy()
+				   >Algorithm to decide the price would be simple here.
